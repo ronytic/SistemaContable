@@ -31,10 +31,10 @@
                 $subm=$submenu->mostrar($_SESSION['Nivel'],$m['CodMenu'])
                 ?>
                 <li>
-                    <a href="index.html"><i class="fa <?php echo $m['Imagen']?>"></i> <span class="nav-label"><?php echo $m['Nombre']?></span> <?php if(count($subm)){?><span class="fa arrow"></span><?php }?></a>
+                    <a href="#"><i class="fa <?php echo $m['Imagen']?>"></i> <span class="nav-label"><?php echo $m['Nombre']?></span> <?php if(count($subm)){?><span class="fa arrow"></span><?php }?></a>
                     <ul class="nav nav-second-level collapse">
                         <?php foreach($subm as $sm){?>
-                        <li><a href="index.html"><?php echo $sm['Nombre']?></a></li>
+                        <li><a href="<?php echo $folder?><?php echo $m['Url']?><?php echo $sm['Url']?>"><i class="fa <?php echo $sm['Imagen']!=""?$sm['Imagen']:'';//fa-arrow-right?>"></i><?php echo $sm['Nombre']?></a></li>
                         <?php }?>
                     </ul>
                 </li>

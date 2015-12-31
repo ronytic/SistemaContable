@@ -1,4 +1,5 @@
 <?php
+include("login/check.php");
 $titulo="Inicio";
 $folder="";
 ?>

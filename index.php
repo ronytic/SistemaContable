@@ -1,6 +1,6 @@
 <?php
 include("login/check.php");
-$titulo="Inicio";
+$titulo="Principal";
 $folder="";
 ?>
 <?php include_once("cabecerahtml.php");?>

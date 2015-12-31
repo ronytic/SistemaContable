@@ -12,18 +12,18 @@
                             <img alt="image" class="img-circle" src="<?php echo $folder?>imagenes/usuarios/general.jpg" />
                              </span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David WilliamsNiñoí</strong>
-                             </span> <span class="text-muted text-xs block">Art Director <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $nombrecompleto?></strong>
+                             </span> <span class="text-muted text-xs block"><?php echo $cargo?> <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="contacts.html">Contacts</a></li>
-                            <li><a href="mailbox.html">Mailbox</a></li>
+                            <li><a href="<?php echo $folder?>usuarios/perfil/">Perfil</a></li>
+                            <li><a href="<?php echo $folder?>contactos/">Contactos</a></li>
+                            <li><a href="<?php echo $folder?>correo/">Correo</a></li>
                             <li class="divider"></li>
-                            <li><a href="login.html">Logout</a></li>
+                            <li><a href="<?php echo $folder?>login/logout.php">Salir</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
-                        IN+
+                        SISCON
                     </div>
                 </li>
                 <li>
@@ -237,15 +237,15 @@
         <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <form role="search" class="navbar-form-custom" action="http://webapplayers.com/inspinia_admin-v2.4/search_results.html">
+            <form role="search" class="navbar-form-custom" action="busqueda/">
                 <div class="form-group">
-                    <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
+                    <input type="text" placeholder="Búsqueda General" class="form-control" name="top-search" id="top-search">
                 </div>
             </form>
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
+                    <span class="m-r-sm text-muted welcome-message">SISTEMA DE CONTABILIDAD </span>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
@@ -294,7 +294,7 @@
                         <li>
                             <div class="text-center link-block">
                                 <a href="mailbox.html">
-                                    <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
+                                    <i class="fa fa-envelope"></i> <strong>Leer todos los Mensajes</strong>
                                 </a>
                             </div>
                         </li>
@@ -308,7 +308,7 @@
                         <li>
                             <a href="mailbox.html">
                                 <div>
-                                    <i class="fa fa-envelope fa-fw"></i> You have 16 messages
+                                    <i class="fa fa-envelope fa-fw"></i> Tienes 16 Mensajes
                                     <span class="pull-right text-muted small">4 minutes ago</span>
                                 </div>
                             </a>
@@ -317,7 +317,7 @@
                         <li>
                             <a href="profile.html">
                                 <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <i class="fa fa-twitter fa-fw"></i> 3 Nuevos Contactos
                                     <span class="pull-right text-muted small">12 minutes ago</span>
                                 </div>
                             </a>
@@ -326,7 +326,7 @@
                         <li>
                             <a href="grid_options.html">
                                 <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <i class="fa fa-upload fa-fw"></i> Tres Inicios de Sesión
                                     <span class="pull-right text-muted small">4 minutes ago</span>
                                 </div>
                             </a>
@@ -335,7 +335,7 @@
                         <li>
                             <div class="text-center link-block">
                                 <a href="notifications.html">
-                                    <strong>See All Alerts</strong>
+                                    <strong>Ver Todas las Alertas</strong>
                                     <i class="fa fa-angle-right"></i>
                                 </a>
                             </div>
@@ -345,8 +345,8 @@
 
 
                 <li>
-                    <a href="login.html">
-                        <i class="fa fa-sign-out"></i> Log out
+                    <a href="<?php echo $folder?>login/logout.php">
+                        <i class="fa fa-sign-out"></i> Salir del Sistema
                     </a>
                 </li>
             </ul>
@@ -355,19 +355,19 @@
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
-                    <h2>This is main title</h2>
+                    <h2><?php echo $titulo?></h2>
                     <ol class="breadcrumb">
                         <li>
-                            <a href="index.html">This is</a>
+                            <a href="<?php echo $folder?>">Inicio</a>
                         </li>
                         <li class="active">
-                            <strong>Breadcrumb</strong>
+                            <strong><?php echo $titulo?></strong>
                         </li>
                     </ol>
                 </div>
                 <div class="col-sm-8">
                     <div class="title-action">
-                        <a href="#" class="btn btn-primary">This is action area</a>
+                        <!--<a href="#" class="btn btn-primary">Acciones</a>-->
                     </div>
                 </div>
             </div>

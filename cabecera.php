@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     <div class="logo-element">
-                        SISCON
+                        SC+
                     </div>
                 </li>
                 <li>
@@ -245,7 +245,7 @@
         </div>
             <ul class="nav navbar-top-links navbar-right">
                 <li>
-                    <span class="m-r-sm text-muted welcome-message">SISTEMA DE CONTABILIDAD </span>
+                    <span class="m-r-sm text-muted welcome-message">SISTEMA DE CONTABILIDAD - SISCON+</span>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">

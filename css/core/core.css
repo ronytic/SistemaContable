@@ -1,8 +1,8 @@
-.label-reg,.label-regm{
+.label,.label-m{
     text-align:right;
     font-weight:bold;
 }
-.label-regm{
+.label-m{
     vertical-align:middle !important;    
 }
 .resaltar{

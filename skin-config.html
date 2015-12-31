@@ -291,33 +291,38 @@
     });
 
     // SKIN Select
-    $('.spin-icon').click(function (){
+    $('.spin-icon').click(function (e){
+        e.preventDefault();
         $(".theme-config-box").toggleClass("show");
     });
 
     // Default skin
-    $('.s-skin-0').click(function (){
+    $('.s-skin-0').click(function (e){
+        e.preventDefault();
         $("body").removeClass("skin-1");
         $("body").removeClass("skin-2");
         $("body").removeClass("skin-3");
     });
 
     // Blue skin
-    $('.s-skin-1').click(function (){
+    $('.s-skin-1').click(function (e){
+        e.preventDefault();
         $("body").removeClass("skin-2");
         $("body").removeClass("skin-3");
         $("body").addClass("skin-1");
     });
 
     // Inspinia ultra skin
-    $('.s-skin-2').click(function (){
+    $('.s-skin-2').click(function (e){
+        e.preventDefault();
         $("body").removeClass("skin-1");
         $("body").removeClass("skin-3");
         $("body").addClass("skin-2");
     });
 
     // Yellow skin
-    $('.s-skin-3').click(function (){
+    $('.s-skin-3').click(function (e){
+        e.preventDefault();
         $("body").removeClass("skin-1");
         $("body").removeClass("skin-2");
         $("body").addClass("skin-3");

@@ -1,4 +1,5 @@
 <?php
+$titulo="Inicio";
 $folder="";
 ?>
 <?php include_once("cabecerahtml.php");?>

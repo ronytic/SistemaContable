@@ -1,3 +1,7 @@
+<?php
+$nombrecompleto="Ronald Nina Layme";
+$cargo="Gerente General";
+?>
 <!DOCTYPE html>
 <html>
 <head>

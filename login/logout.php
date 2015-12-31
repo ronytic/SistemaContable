@@ -10,7 +10,7 @@ unset($_SESSION["Login"]);
 unset($_SESSION["CodUsuarioLog"]);
 unset($_SESSION["Nivel"]);
 unset($_SESSION["LoginSistemaContable"]);
-
+unset($_SESSION["CodEmpresa"]);
 session_destroy();
 header("Location:".url_base().$directory);
 ?>

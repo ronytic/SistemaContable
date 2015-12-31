@@ -74,6 +74,7 @@ if(!empty($_POST)){
 			$_SESSION['LoginSistemaContable']=1;
 			$_SESSION['Nivel']=$Nivel;
 			$_SESSION['Idioma']=$reg['Idioma'];
+            $_SESSION['CodEmpresa']=$reg['CodEmpresa'];
 			echo $logusuario->optimizarTablas();
 			header("Location:".$direccion);
 		}

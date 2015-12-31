@@ -10,12 +10,8 @@ if(!empty($_POST)){
 
 	include_once("../configuracion.php");
 	include_once("../class/usuario.php");
-	include_once("../class/alumno.php");
-	include_once("../class/docente.php");
 	include_once("../class/logusuario.php");
 	$usu=new usuario;
-	$alumno=new alumno;
-	$docente=new docente;
 	$logusuario=new logusuario;
 	
 	$url=$_POST['u'];
@@ -50,33 +46,11 @@ if(!empty($_POST)){
 			$reg=$usu->loginUsuarios($usuario,$pass);
 			$reg=array_shift($reg);
 			$sw=1;
-		}elseif(ereg('^[0-9]{4,9}[0-9]$',$usuario)){
-			//Padre de familia
-			$reg=$alumno->loginPadre($usuario,$pass);
-			$reg=array_shift($reg);
-			$Nivel=6;
-		
-		}elseif(ereg('^([a-z])*[0-9]{1,4}$',$usuarioAl)){
-			//Alumno
-			//echo $usuario;
-			$reg=$alumno->loginAlumno($usuario,$pass);
-			$reg=array_shift($reg);
-			$Nivel=7;
-		}elseif(ereg('^[0-9]+[a-z]*$',$usuario)){
-			//Docente
-
-			$reg=$docente->loginDocente($usuario,$pass);
-			$reg=array_shift($reg);
-			$Nivel=3;
 		}else{
 			//echo $sql;
 			header("Location:./?u=".$url.'&error=1');		
 		}
-		//echo $Nivel;
-		/**/
 		
-		//$res=mysql_query($sql);
-		//@$reg=mysql_fetch_array($res);
 		$codUsuario=$reg['CodUsuario'];
 		
 		if($sw){
@@ -96,9 +70,8 @@ if(!empty($_POST)){
 				"Lenguaje"=>"'$lenguaje'"
 			);
 			$logusuario->insertarRegistro($valuesLog,0);
-			//mysql_query("INSERT INTO logusuarios VALUES(NULL,$codUsuario,$Nivel,'$url','$fecha','$hora','$agente','$ip','$referencia','$lenguaje')");
 			$_SESSION['CodUsuarioLog']=$codUsuario;
-			$_SESSION['LoginSistemaColegio']=1;
+			$_SESSION['LoginSistemaContable']=1;
 			$_SESSION['Nivel']=$Nivel;
 			$_SESSION['Idioma']=$reg['Idioma'];
 			echo $logusuario->optimizarTablas();

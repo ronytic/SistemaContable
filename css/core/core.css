@@ -1,0 +1,13 @@
+.label-reg,.label-regm{
+    text-align:right;
+    font-weight:bold;
+}
+.label-regm{
+    vertical-align:middle !important;    
+}
+.resaltar{
+    font-weight:bold;
+}
+.der{
+    text-align:right;    
+}

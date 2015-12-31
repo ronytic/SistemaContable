@@ -1,6 +1,17 @@
 <?php
-$nombrecompleto="Ronald Nina Layme";
-$cargo="Gerente General";
+include("class/usuario.php");
+$usuario=new usuario;
+$datosusu=$usuario->mostrarDatos($_SESSION['CodUsuarioLog']);
+$datosusu=array_shift($datosusu);
+
+$nombrecompleto=$datosusu['Nombres']." ".$datosusu['Paterno']." ".$datosusu['Materno'];
+$cargo=$datosusu['Nick'];
+$foto=$datosusu['Foto']!=""?$datosusu['Foto']:"general.jpg";
+
+include("class/menu.php");
+$menu=new menu;
+include("class/submenu.php");
+$submenu=new submenu;
 ?>
 <!DOCTYPE html>
 <html>

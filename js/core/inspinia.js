@@ -109,7 +109,8 @@ $(document).ready(function () {
    });
 
     // Minimalize menu
-    $('.navbar-minimalize').click(function () {
+    $('.navbar-minimalize').click(function (e) {
+        e.preventDefault();
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
 

@@ -20,7 +20,8 @@ $(document).ready(function () {
     $('#side-menu').metisMenu();
 
     // Collapse ibox function
-    $('.collapse-link').click(function () {
+    $('.collapse-link').click(function (e) {
+        e.preventDefault();
         var ibox = $(this).closest('div.ibox');
         var button = $(this).find('i');
         var content = ibox.find('div.ibox-content');
@@ -34,15 +35,17 @@ $(document).ready(function () {
     });
 
     // Close ibox function
-    $('.close-link').click(function () {
+    $('.close-link').click(function (e) {
+        e.preventDefault();
         var content = $(this).closest('div.ibox');
         content.remove();
     });
 
     // Fullscreen ibox function
-    $('.fullscreen-link').click(function () {
+    $('.fullscreen-link').click(function (e) {
         var ibox = $(this).closest('div.ibox');
         var button = $(this).find('i');
+        e.preventDefault();
         $('body').toggleClass('fullscreen-ibox-mode');
         button.toggleClass('fa-expand').toggleClass('fa-compress');
         ibox.toggleClass('fullscreen');
@@ -52,7 +55,8 @@ $(document).ready(function () {
     });
 
     // Close menu in canvas mode
-    $('.close-canvas-menu').click(function () {
+    $('.close-canvas-menu').click(function (e) {
+        e.preventDefault();
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
     });
@@ -64,7 +68,8 @@ $(document).ready(function () {
     });
 
     // Open close right sidebar
-    $('.right-sidebar-toggle').click(function () {
+    $('.right-sidebar-toggle').click(function (e) {
+        e.preventDefault();
         $('#right-sidebar').toggleClass('sidebar-open');
     });
 

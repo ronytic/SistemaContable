@@ -1,10 +1,10 @@
 </div>
             <div class="footer">
-                <div class="pull-right">
-                    10GB of <strong>250GB</strong> Free.
+                <div class="pull-right" title="Cel: (591)-73230568">
+                    Sistema Desarrollado por: <a href="http://fb.com/ronaldnina" target="_blank" title="Cel: (591)-73230568"><strong>Ronald Nina Layme</strong></a>.
                 </div>
                 <div>
-                    <strong>Copyright</strong> Example Company &copy; 2014-2015
+                    <strong>Todos los Derechos Reservados</strong> Sistema de Administración Contable Plus &copy; 2015 - <?php echo date("Y")?>
                 </div>
             </div>
 

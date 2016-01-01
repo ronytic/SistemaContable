@@ -165,7 +165,7 @@
         </nav>
         </div>
             <div class="row wrapper border-bottom white-bg page-heading">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <h2><?php echo $titulo?></h2>
                     <ol class="breadcrumb">
                         <li>
@@ -176,7 +176,7 @@
                         </li>
                     </ol>
                 </div>
-                <div class="col-sm-8">
+                <div class="col-sm-6">
                     <div class="title-action">
                         <!--<a href="#" class="btn btn-primary">Acciones</a>-->
                     </div>

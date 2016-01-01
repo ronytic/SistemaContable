@@ -35,6 +35,10 @@ $folder="../../";
                         <form action="guardar.php" method="post">
                         <table class="table">
                             <tr>
+                                <td class="label-m col-sm-3">Código del Capítulo:</td>
+                                <td><input type="text" class="form-control" placeholder="" name="Codigo"></td>
+                            </tr>
+                            <tr>
                                 <td class="label-m col-sm-3">Nombre del Capítulo:</td>
                                 <td><input type="text" class="form-control" placeholder="" name="Nombre"></td>
                             </tr>
@@ -58,6 +62,10 @@ $folder="../../";
                         <form action="actualizar.php" method="post">
                         <input type="hidden" name="CodCapitulo" value="<?php echo $_GET['CodCapitulo']?>">
                         <table class="table">
+                            <tr>
+                                <td class="label-m col-sm-3">Código del Capítulo:</td>
+                                <td><input type="text" class="form-control" placeholder="" name="Codigo" value="<?php echo $pc_cap['Codigo']?>"></td>
+                            </tr>
                             <tr>
                                 <td class="label-m col-sm-3">Nombre del Capítulo:</td>
                                 <td><input type="text" class="form-control" placeholder="" name="Nombre" value="<?php echo $pc_cap['Nombre']?>"></td>

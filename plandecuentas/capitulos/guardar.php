@@ -3,7 +3,7 @@ include("../../login/check.php");
 extract($_POST);
 include("../../class/plancuentas_capitulo.php");
 $plancuentas_capitulo=new plancuentas_capitulo;
-$valores=array("Nombre"=>"'$Nombre'");
+$valores=array("Codigo"=>"'$Codigo'","Nombre"=>"'$Nombre'");
 $plancuentas_capitulo->insertarRegistro($valores);
 $titulo="Plan de Cuentas - Capítulos";
 $folder="../../";

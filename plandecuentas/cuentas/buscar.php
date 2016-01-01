@@ -29,8 +29,8 @@ $plancuentas_grupo=new plancuentas_grupo;
             <td><?php echo $c['Nombre']?></td>
             <td><?php echo $plancuentas_gru['Codigo']?> - <?php echo $plancuentas_gru['Nombre']?></td>
             <td><?php echo $plancuentas_cap['Codigo']?> - <?php echo $plancuentas_cap['Nombre']?></td>
-            <td width="40"><?php if($_SESSION['CodEmpresa']==$g['CodEmpresa'] || $_SESSION['Nivel']==1){?><a href="?CodCuenta=<?php echo $c['CodCuenta']?>" class="btn btn-xs btn-white modificar" title="Modificar"><i class="fa fa-pencil"></i></a><?php }?></td>
-            <td width="40"><?php if($_SESSION['CodEmpresa']==$g['CodEmpresa'] || $_SESSION['Nivel']==1){?><a href="#" class="btn btn-xs btn-white eliminar" title="Eliminar" rel="<?php echo $c['CodCuenta']?>"><i class="fa fa-trash"></i></a><?php }?></td>
+            <td width="40"><?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?><a href="?CodCuenta=<?php echo $c['CodCuenta']?>" class="btn btn-xs btn-white modificar" title="Modificar"><i class="fa fa-pencil"></i></a><?php }?></td>
+            <td width="40"><?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?><a href="#" class="btn btn-xs btn-white eliminar" title="Eliminar" rel="<?php echo $c['CodCuenta']?>"><i class="fa fa-trash"></i></a><?php }?></td>
         </tr>
     <?php }?>
 </table>

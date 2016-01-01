@@ -221,6 +221,7 @@ class bd{
 			if(!isset($Values['CodUsuario'])&& empty($Values['CodUsuario'])){
 				$Values['CodUsuario']="$CodUsuario";
 			}
+            $Values['CodEmpresa']=$_SESSION['CodEmpresa'];
 			$Values['Activo']=1;
 		}else{//,array("Activo"=>1)
 			$Values=array_merge	($Values);	
@@ -243,7 +244,7 @@ class bd{
 	}
 	function mostrarTodoRegistro($where='',$activo=1,$orden="")
 	{
-			
+		$CodEmpresa=$_SESSION['CodEmpresa'];	
 		if(empty($this->campos)){
 			$this->campos=array('*');
 		}
@@ -262,7 +263,7 @@ class bd{
 				$condicion=" and Activo=0";	
 			}
 		endif;
-		return $this->getRecords($where.$condicion,$orden);
+		return $this->getRecords($where.$condicion." and (CodEmpresa=0 or CodEmpresa=".$CodEmpresa.")",$orden);
 	}
 	function actualizarRegistro($values,$Where){
 		return $this->updateRow($values,$Where);	

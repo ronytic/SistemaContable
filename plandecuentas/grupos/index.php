@@ -14,7 +14,7 @@ $folder="../../";
             <ul class="nav nav-tabs">
                 <li class="<?php echo empty($_GET)?'active':'';?>"><a data-toggle="tab" href="#tab-1"> Listar Grupos</a></li>
                 <li class=""><a data-toggle="tab" href="#tab-2"> Nuevo Grupo</a></li>
-                <?php if($_GET['CodGrupo']){?><li class="active"><a data-toggle="tab" href="#tab-3"> Modificar Capítulo</a></li><?php }?>
+                <?php if($_GET['CodGrupo']){?><li class="active"><a data-toggle="tab" href="#tab-3"> Modificar Grupo</a></li><?php }?>
             </ul>
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane <?php echo empty($_GET)?'active':'';?>">

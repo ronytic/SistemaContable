@@ -1,6 +1,20 @@
 $(document).on("ready",function(){
-	
-});
+    $(document).on("click",".eliminar",function(e){
+        e.preventDefault();
+        if(confirm("¿Esta Seguro de Eliminar estos Datos?")){
+            var Cod=$(this).attr("rel")
+            $.post("eliminar.php",{"Cod":Cod},function(data){
+               $(".formulario").submit();
+            });
+        }
+    }) 
+    $(document).on("click",".modificar",function(e){
+        if(!confirm("¿Desea Modificar estos Datos?")){
+            e.preventDefault();
+        }
+    })   
+})
+
 $.fn.hasAttr = function(name) {  
    return this.attr(name) !== undefined;
 };

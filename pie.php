@@ -14,7 +14,7 @@
         var folder="<?php echo $folder?>";
     </script>
     <!-- Principal scripts -->
-    <script src="<?php echo $folder?>js/core/jquery-2.1.1.js"></script>
+    
     <script src="<?php echo $folder?>js/core/bootstrap.min.js"></script>
     <script src="<?php echo $folder?>js/plugins/metisMenu/jquery.metisMenu.js"></script>
     <script src="<?php echo $folder?>js/plugins/slimscroll/jquery.slimscroll.min.js"></script>

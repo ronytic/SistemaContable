@@ -2,7 +2,7 @@
 include("../../login/check.php");
 include("../../class/plancuentas_cuenta.php");
 $plancuentas_cuenta=new plancuentas_cuenta;
-$pc_cue=$plancuentas_cuenta->mostrarTodoRegistro("","1","Codigo");
+$pc_cue=$plancuentas_cuenta->mostrarTodoRegistro("","1","CodGrupo,Codigo");
 $titulo="Plan de Cuentas - Subcuentas";
 $folder="../../";
 ?>

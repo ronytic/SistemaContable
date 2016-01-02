@@ -4,7 +4,7 @@ extract($_POST);
 $Nombre=$Nombre!=""?$Nombre:'%';
 include("../../class/plancuentas_cuenta.php");
 $plancuentas_cuenta=new plancuentas_cuenta;
-$plancuentas_cue=$plancuentas_cuenta->mostrarTodoRegistro("Nombre  LIKE '$Nombre%' and CodGrupo LIKE '$CodGrupo'","1","Codigo");
+$plancuentas_cue=$plancuentas_cuenta->mostrarTodoRegistro("Nombre  LIKE '$Nombre%' and CodGrupo LIKE '$CodGrupo'","1","CodGrupo,Codigo");
 
 include("../../class/plancuentas_capitulo.php");
 $plancuentas_capitulo=new plancuentas_capitulo;

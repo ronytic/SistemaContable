@@ -41,6 +41,12 @@ $(document).on("ready",function(){
             $("#formulariocuenta").html(data).slideDown("slow");    
         });
     });
+    $(document).on("click","#nuevosubcuenta",function(e){
+        e.preventDefault();
+        $.post("subcuenta/formulario_subcuenta.php",{},function(data){
+            $("#formulariosubcuenta").html(data).slideDown("slow");    
+        });
+    });
     $(document).on("click"," .cerrar",function(e){
         e.preventDefault();
         $(this).parent().parent().parent().html('');
@@ -78,6 +84,18 @@ $(document).on("ready",function(){
         $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodGrupo":CodGrupo},function(){
             listarcuentas();    
              $("#formulariocuenta").html('');
+        })
+    })
+    $(document).on("click","#GuardarSubcuenta",function(e){
+        e.preventDefault();
+        var CodCuenta=$("[name=CodCuenta]:checked").val();
+        var Codigo=$("#formulariosubcuenta [name=Codigo]").val(); 
+        var Nombre=$("#formulariosubcuenta [name=Nombre]").val(); 
+        var Cod=$("#formulariosubcuenta [name=Cod]").val(); 
+        var ArchivoGuardar=$("#formulariosubcuenta [name=ArchivoGuardar]").val(); 
+        $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodCuenta":CodCuenta},function(){
+            listarsubcuentas();    
+             $("#formulariosubcuenta").html('');
         })
     })
     $(document).on("click",".modificarcuenta",function(e){
@@ -171,13 +189,19 @@ function listarcuentaanalitica(){
     <div class="col-lg-4">
         <div class="ibox">
             <div class="ibox-title"><h5>4.- Subcuenta</h5> <span class="pull-right"><a href="#" id="nuevosubcuenta" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
-            <div class="ibox-content" id="listadosubcuentas"></div>
+            <div class="ibox-content">
+                <div id="listadosubcuentas"></div>
+                <div id="formulariosubcuenta"></div>
+            </div>
         </div>
     </div><!--Col12-->
     <div class="col-lg-8">
         <div class="ibox">
             <div class="ibox-title"><h5>5.- Cuenta Analitica</h5> <span class="pull-right"><a href="#" id="nuevocuentaanalitica" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
-            <div class="ibox-content" id="listadocuentaanalitica"></div>
+            <div class="ibox-content">
+                <div id="listadocuentaanalitica"></div>
+                <div id="formulariocuentaanalitica"></div>
+            </div>
         </div>
     </div><!--Col12-->
 </div>

@@ -26,5 +26,5 @@ if($_GET['Cod']!=""){
         <a href="#" class="btn btn-sm btn-success" id="GuardarCapitulo">Guardar</a>
     </span>
 </div>
-<input type="text" value="<?php echo $_GET['Cod']?>" name="Cod">
-<input type="text" value="capitulo/<?php echo $archivo?>" name="ArchivoGuardar">
+<input type="hidden" value="<?php echo $_GET['Cod']?>" name="Cod">
+<input type="hidden" value="capitulo/<?php echo $archivo?>" name="ArchivoGuardar">

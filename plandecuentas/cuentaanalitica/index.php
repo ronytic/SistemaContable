@@ -29,6 +29,12 @@ $(document).on("ready",function(){
             $("#formulariocapitulo").html(data).slideDown("slow");    
         });
     });
+    $(document).on("click","#nuevogrupo",function(e){
+        e.preventDefault();
+        $.post("grupo/formulario_grupo.php",{},function(data){
+            $("#formulariogrupo").html(data).slideDown("slow");    
+        });
+    });
     $(document).on("click"," .cerrar",function(e){
         e.preventDefault();
         $(this).parent().parent().parent().html('');
@@ -40,8 +46,20 @@ $(document).on("ready",function(){
         var Cod=$("#formulariocapitulo [name=Cod]").val(); 
         var ArchivoGuardar=$("#formulariocapitulo [name=ArchivoGuardar]").val(); 
         $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod},function(){
-            listarcapitulos();    
+            listargrupos();    
              $("#formulariocapitulo").html('');
+        })
+    })
+    $(document).on("click","#GuardarGrupo",function(e){
+        e.preventDefault();
+        var CodCapitulo=$("[name=CodCapitulo]:checked").val();
+        var Codigo=$("#formulariogrupo [name=Codigo]").val(); 
+        var Nombre=$("#formulariogrupo [name=Nombre]").val(); 
+        var Cod=$("#formulariogrupo [name=Cod]").val(); 
+        var ArchivoGuardar=$("#formulariogrupo [name=ArchivoGuardar]").val(); 
+        $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodCapitulo":CodCapitulo},function(){
+            listargrupos();    
+             $("#formulariogrupo").html('');
         })
     })
     $(document).on("click",".modificarcuenta",function(e){
@@ -114,13 +132,16 @@ function listarcuentaanalitica(){
     </div><!--Col12-->
     <div class="col-lg-4">
         <div class="ibox">
-            <div class="ibox-title"><h5>2.- Grupo</h5></div>
-            <div class="ibox-content" id="listadogrupos"></div>
+            <div class="ibox-title"><h5>2.- Grupo</h5> <span class="pull-right"><a href="#" id="nuevogrupo" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
+            <div class="ibox-content">
+                <div id="listadogrupos"></div>
+                <div id="formulariogrupo"></div>
+            </div>
         </div>
     </div><!--Col12-->
     <div class="col-lg-4">
         <div class="ibox">
-            <div class="ibox-title"><h5>3.- Cuenta</h5></div>
+            <div class="ibox-title"><h5>3.- Cuenta</h5> <span class="pull-right"><a href="#" id="nuevocuenta" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
             <div class="ibox-content" id="listadocuentas"></div>
         </div>
     </div><!--Col12-->
@@ -128,13 +149,13 @@ function listarcuentaanalitica(){
 <div class="row">
     <div class="col-lg-4">
         <div class="ibox">
-            <div class="ibox-title"><h5>4.- Subcuenta</h5></div>
+            <div class="ibox-title"><h5>4.- Subcuenta</h5> <span class="pull-right"><a href="#" id="nuevosubcuenta" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
             <div class="ibox-content" id="listadosubcuentas"></div>
         </div>
     </div><!--Col12-->
     <div class="col-lg-8">
         <div class="ibox">
-            <div class="ibox-title"><h5>5.- Cuenta Analitica</h5></div>
+            <div class="ibox-title"><h5>5.- Cuenta Analitica</h5> <span class="pull-right"><a href="#" id="nuevocuentaanalitica" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
             <div class="ibox-content" id="listadocuentaanalitica"></div>
         </div>
     </div><!--Col12-->

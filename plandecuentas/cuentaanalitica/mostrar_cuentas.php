@@ -21,11 +21,11 @@ $pc_cue=$plancuentas_cuenta->mostrarTodoRegistro("CodGrupo=$CodGrupo","1","Codig
     
     <td width="40">
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="?CodCuenta=<?php echo $c['CodCuenta']?>" class="btn btn-xs btn-white modificar" title="Modificar"><i class="fa fa-pencil"></i></a>
+    <a href="cuenta/formulario_cuenta.php?Cod=<?php echo $c['CodCuenta']?>" class="btn btn-xs btn-white modificarcuenta" title="Modificar" rel-formulario="formulariocuenta"><i class="fa fa-pencil"></i></a>
     <?php }?>
     
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="#" class="btn btn-xs btn-white eliminar" title="Eliminar" rel="<?php echo $sc['CodCuenta']?>"><i class="fa fa-trash"></i></a>
+    <a href="cuenta/eliminar_cuenta.php?Cod=<?php echo $c['CodCuenta']?>" class="btn btn-xs btn-white eliminarcuenta" title="Eliminar" rel="<?php echo $sc['CodGrupo']?>" rel-cuenta="listarcuentas"><i class="fa fa-trash"></i></a>
     <?php }?>
     </td>
 </tr>

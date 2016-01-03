@@ -21,11 +21,11 @@ $pc_subcue=$plancuentas_subcuenta->mostrarTodoRegistro("CodCuenta=$CodCuenta","1
     
     <td width="40">
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="?CodSubcuenta=<?php echo $c['CodSubcuenta']?>" class="btn btn-xs btn-white modificar" title="Modificar"><i class="fa fa-pencil"></i></a>
+    <a href="subcuenta/formulario_subcuenta.php?Cod=<?php echo $c['CodSubcuenta']?>" class="btn btn-xs btn-white modificarcuenta" title="Modificar" rel-formulario="formulariosubcuenta"><i class="fa fa-pencil"></i></a>
     <?php }?>
     
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="#" class="btn btn-xs btn-white eliminar" title="Eliminar" rel="<?php echo $sc['CodSubcuenta']?>"><i class="fa fa-trash"></i></a>
+    <a href="subcuenta/eliminar_subcuenta.php?Cod=<?php echo $c['CodSubcuenta']?>" class="btn btn-xs btn-white eliminarcuenta" title="Eliminar" rel="<?php echo $sc['CodGrupo']?>" rel-cuenta="listarsubcuentas"><i class="fa fa-trash"></i></a>
     <?php }?>
     </td>
 </tr>

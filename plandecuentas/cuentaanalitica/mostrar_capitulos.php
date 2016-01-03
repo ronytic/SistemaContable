@@ -20,11 +20,11 @@ $pc_cap=$plancuentas_capitulo->mostrarTodoRegistro("","1","Codigo,Nombre");
     
     <td width="40">
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="?CodCapitulo=<?php echo $c['CodCapitulo']?>" class="btn btn-xs btn-white modificar" title="Modificar"><i class="fa fa-pencil"></i></a>
+    <a href="capitulo/formulario_capitulo.php?Cod=<?php echo $c['CodCapitulo']?>" class="btn btn-xs btn-white modificarcuenta" title="Modificar" rel-formulario="formulariocapitulo"><i class="fa fa-pencil"></i></a>
     <?php }?>
     
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="#" class="btn btn-xs btn-white eliminar" title="Eliminar" rel="<?php echo $sc['CodCapitulo']?>"><i class="fa fa-trash"></i></a>
+    <a href="capitulo/eliminar_capitulo.php?Cod=<?php echo $c['CodCapitulo']?>" class="btn btn-xs btn-white eliminarcuenta" title="Eliminar" rel="<?php echo $sc['CodCapitulo']?>" rel-cuenta="listarcapitulos"><i class="fa fa-trash"></i></a>
     <?php }?>
     </td>
 </tr>

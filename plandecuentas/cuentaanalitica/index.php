@@ -35,6 +35,12 @@ $(document).on("ready",function(){
             $("#formulariogrupo").html(data).slideDown("slow");    
         });
     });
+    $(document).on("click","#nuevocuenta",function(e){
+        e.preventDefault();
+        $.post("cuenta/formulario_cuenta.php",{},function(data){
+            $("#formulariocuenta").html(data).slideDown("slow");    
+        });
+    });
     $(document).on("click"," .cerrar",function(e){
         e.preventDefault();
         $(this).parent().parent().parent().html('');
@@ -60,6 +66,18 @@ $(document).on("ready",function(){
         $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodCapitulo":CodCapitulo},function(){
             listargrupos();    
              $("#formulariogrupo").html('');
+        })
+    })
+    $(document).on("click","#GuardarCuenta",function(e){
+        e.preventDefault();
+        var CodGrupo=$("[name=CodGrupo]:checked").val();
+        var Codigo=$("#formulariocuenta [name=Codigo]").val(); 
+        var Nombre=$("#formulariocuenta [name=Nombre]").val(); 
+        var Cod=$("#formulariocuenta [name=Cod]").val(); 
+        var ArchivoGuardar=$("#formulariocuenta [name=ArchivoGuardar]").val(); 
+        $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodGrupo":CodGrupo},function(){
+            listarcuentas();    
+             $("#formulariocuenta").html('');
         })
     })
     $(document).on("click",".modificarcuenta",function(e){
@@ -142,7 +160,10 @@ function listarcuentaanalitica(){
     <div class="col-lg-4">
         <div class="ibox">
             <div class="ibox-title"><h5>3.- Cuenta</h5> <span class="pull-right"><a href="#" id="nuevocuenta" class="btn btn-xs btn-success"><i class="fa fa-plus"></i></a></span></div>
-            <div class="ibox-content" id="listadocuentas"></div>
+            <div class="ibox-content">
+                <div id="listadocuentas"></div>
+                <div id="formulariocuenta"></div>
+            </div>
         </div>
     </div><!--Col12-->
 </div><!--Row-->

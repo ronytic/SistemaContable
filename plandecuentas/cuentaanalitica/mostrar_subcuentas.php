@@ -10,6 +10,14 @@ $pc_subcue=$plancuentas_subcuenta->mostrarTodoRegistro("CodCuenta=$CodCuenta","1
 <tr><th>Nombre</th></tr>
 
 </thead>
+<tr>
+    <td>
+        <div class="radio radio-danger">
+        <input type="radio" name="CodSubcuenta" value="0" id="Subcuenta0">
+        <label for="Subcuenta0">0 - Ninguno</label>
+        </div> 
+    </td>
+</tr>
 <?php foreach($pc_subcue as $c){?>
 <tr>
     <td>

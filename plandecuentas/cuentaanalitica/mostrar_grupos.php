@@ -3,7 +3,7 @@ include("../../login/check.php");
 extract($_POST);
 include("../../class/plancuentas_grupo.php");
 $plancuentas_grupo=new plancuentas_grupo;
-$pc_gru=$plancuentas_grupo->mostrarTodoRegistro("CodCapitulo=$CodCapitulo","1","Codigo,Nombre");
+$pc_gru=$plancuentas_grupo->mostrarTodoRegistro("CodCapitulo=$CodCapitulo","1","CAST(Codigo AS UNSIGNED),Nombre");
 ?>
 <table class="table table-bordered table-striped table-hover table-condensed">
 <thead>

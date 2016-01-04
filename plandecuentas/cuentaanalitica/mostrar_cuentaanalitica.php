@@ -16,14 +16,20 @@ $plancuentas_subcuenta=new plancuentas_subcuenta;
 ?>
 <table class="table table-bordered table-striped table-hover table-condensed">
 <thead>
-<tr><th width="50">Cod. General</th><th>Nombre</th></tr>
+<tr><th width="50">Código General</th><th>Nombre</th></tr>
 
 </thead>
 <?php foreach($pc_subcue as $c){
     $pc_cap=$plancuentas_capitulo->mostrarTodoRegistro("CodCapitulo=".$c['CodCapitulo']);    $pc_cap=array_shift($pc_cap);
+    $pc_gru=$plancuentas_grupo->mostrarTodoRegistro("CodGrupo=".$c['CodGrupo']);
+    $pc_gru=array_shift($pc_gru);
+    $pc_cue=$plancuentas_cuenta->mostrarTodoRegistro("CodCuenta=".$c['CodCuenta']);
+    $pc_cue=array_shift($pc_cue);
+    $pc_subcue=$plancuentas_subcuenta->mostrarTodoRegistro("CodSubcuenta=".$c['CodSubcuenta']);
+    $pc_subcue=array_shift($pc_subcue);
 ?>
 <tr>
-    <td class="der"><?php echo $pc_cap['Codigo']?>.000</td>
+    <td class="der middle"><?php echo $pc_cap['Codigo']?>.<?php echo $pc_gru['Codigo']!=""?$pc_gru['Codigo']:'0';?>.<?php echo $pc_cue['Codigo']!=""?$pc_cue['Codigo']:'0';?>.<?php echo $pc_subcue['Codigo']!=""?$pc_subcue['Codigo']:'0';?>.<?php echo $c['Codigo']!=""?$c['Codigo']:'0';?></td>
     <td>
         <div class="radio radio-danger">
         <input type="radio" name="CodCuentaAnalitica" value="<?php echo $c['CodCuentaAnalitica']?>" id="CodCuentaAnalitica<?php echo $c['CodCuentaAnalitica']?>">

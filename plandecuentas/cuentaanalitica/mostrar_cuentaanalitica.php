@@ -14,18 +14,18 @@ $pc_subcue=$plancuentas_cuentaanalitica->mostrarTodoRegistro("CodSubcuenta=$CodS
 <tr>
     <td>
         <div class="radio radio-danger">
-        <input type="radio" name="CodSubcuenta" value="<?php echo $c['CodCuenta']?>" id="CodSubcuenta<?php echo $c['CodSubcuenta']?>">
-        <label for="CodSubcuenta<?php echo $c['CodSubcuenta']?>"><?php echo $c['Codigo']?> - <?php echo $c['Nombre']?></label>
+        <input type="radio" name="CodCuentaAnalitica" value="<?php echo $c['CodCuentaAnalitica']?>" id="CodCuentaAnalitica<?php echo $c['CodCuentaAnalitica']?>">
+        <label for="CodCuentaAnalitica<?php echo $c['CodCuentaAnalitica']?>"><?php echo $c['Codigo']?> - <?php echo $c['Nombre']?></label>
         </div>    
     </td>
     
     <td width="40">
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="?CodSubcuenta=<?php echo $c['CodSubcuenta']?>" class="btn btn-xs btn-white modificar" title="Modificar"><i class="fa fa-pencil"></i></a>
+    <a href="cuentaanalitica/formulario_cuentaanalitica.php?Cod=<?php echo $c['CodCuentaAnalitica']?>" class="btn btn-xs btn-white modificarcuenta" title="Modificar" rel-formulario="formulariocuentaanalitica"><i class="fa fa-pencil"></i></a>
     <?php }?>
     
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
-    <a href="#" class="btn btn-xs btn-white eliminar" title="Eliminar" rel="<?php echo $sc['CodSubcuenta']?>"><i class="fa fa-trash"></i></a>
+    <a href="cuentaanalitica/eliminar_cuentaanalitica.php?Cod=<?php echo $c['CodCuentaAnalitica']?>" class="btn btn-xs btn-white eliminarcuenta" title="Eliminar" rel="<?php echo $sc['CodCuentaAnalitica']?>" rel-cuenta="listarcuentaanalitica"><i class="fa fa-trash"></i></a>
     <?php }?>
     </td>
 </tr>

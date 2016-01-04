@@ -153,18 +153,25 @@ function listarcapitulos(){
     });
 }
 function listargrupos(){
+    $("#listadocuentas").html("");   
+    $("#listadosubcuentas").html("");
+    $("#listadocuentaanalitica").html("");
+    
     var CodCapitulo=$("[name=CodCapitulo]:checked").val();
     $.post("mostrar_grupos.php",{"CodCapitulo":CodCapitulo},function(data){
         $("#listadogrupos").html(data);
     });
 }
 function listarcuentas(){
+    $("#listadosubcuentas").html("");
+    $("#listadocuentaanalitica").html("");
     var CodGrupo=$("[name=CodGrupo]:checked").val();
     $.post("mostrar_cuentas.php",{"CodGrupo":CodGrupo},function(data){
         $("#listadocuentas").html(data);
     });
 }
 function listarsubcuentas(){
+    $("#listadocuentaanalitica").html("");
     var CodCuenta=$("[name=CodCuenta]:checked").val();
     $.post("mostrar_subcuentas.php",{"CodCuenta":CodCuenta},function(data){
         $("#listadosubcuentas").html(data);

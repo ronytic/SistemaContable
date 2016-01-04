@@ -11,6 +11,12 @@ if($_GET['Cod']!=""){
 }else{
     $titulo="Nuevo";    
     $archivo="guardar.php";
+    include_once("../../../class/plancuentas_subcuenta.php");
+    $plancuentas_subcuenta=new plancuentas_subcuenta;
+    $plancuentas_subcuenta->campos=array("MAX(Codigo) as Codigo");
+    $pc_cap=$plancuentas_subcuenta->mostrarTodoRegistro("CodCuenta=".$_POST['CodCuenta'],1,"Codigo");
+    $pc_cap=array_shift($pc_cap);
+    $pc_cap['Codigo']+=1;
 }
 ?>
 <small>

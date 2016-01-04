@@ -28,7 +28,7 @@ if($_GET['Cod']!=""){
 </small>
 <div class="input-group">
     <input type="text" name="Codigo" value="<?php echo $pc_cap['Codigo']?>" placeholder="Código" class="input input-sm  form-control col-sm-2" size="2" style="width:15%;">
-    <input type="text" name="Nombre" value="<?php echo $pc_cap['Nombre']?>" placeholder="Nombre" class="input input-sm form-control col-sm-12" size="20" style="width:50%;"> 
+    <input type="text" name="Nombre" value="<?php echo $pc_cap['Nombre']?>" placeholder="Nombre" class="input input-sm form-control col-sm-12" size="20" style="width:50%;" autofocus> 
     <input type="text" name="Detalle" value="<?php echo $pc_cap['Detalle']?>" placeholder="Detalle" class="input input-sm form-control col-sm-12" size="20" style="width:35%;"> 
     <span class="input-group-btn">
         <a href="#" class="btn btn-sm btn-success" id="GuardarCuentaAnalitica">Guardar</a>

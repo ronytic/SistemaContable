@@ -2,7 +2,7 @@
 include("../../login/check.php");
 include("../../class/plancuentas_capitulo.php");
 $plancuentas_capitulo=new plancuentas_capitulo;
-$pc_cap=$plancuentas_capitulo->mostrarTodoRegistro("","1","Codigo,Nombre");
+$pc_cap=$plancuentas_capitulo->mostrarTodoRegistro("","1","CAST(Codigo AS UNSIGNED),Nombre");
 ?>
 <table class="table table-bordered table-striped table-hover table-condensed">
 <thead>

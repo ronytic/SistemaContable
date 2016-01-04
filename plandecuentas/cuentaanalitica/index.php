@@ -76,6 +76,8 @@ $(document).on("ready",function(){
     $(document).on("click","#GuardarGrupo",function(e){
         e.preventDefault();
         var CodCapitulo=$("[name=CodCapitulo]:checked").val();
+        if(isNaN(CodCapitulo)){alert("¡Seleccione un Capitulo!");return false;}
+        
         var Codigo=$("#formulariogrupo [name=Codigo]").val(); 
         var Nombre=$("#formulariogrupo [name=Nombre]").val(); 
         var Cod=$("#formulariogrupo [name=Cod]").val(); 
@@ -88,6 +90,8 @@ $(document).on("ready",function(){
     $(document).on("click","#GuardarCuenta",function(e){
         e.preventDefault();
         var CodGrupo=$("[name=CodGrupo]:checked").val();
+        if(isNaN(CodGrupo)){alert("¡Seleccione un Grupo!");return false;}
+        
         var Codigo=$("#formulariocuenta [name=Codigo]").val(); 
         var Nombre=$("#formulariocuenta [name=Nombre]").val(); 
         var Cod=$("#formulariocuenta [name=Cod]").val(); 
@@ -100,6 +104,8 @@ $(document).on("ready",function(){
     $(document).on("click","#GuardarSubcuenta",function(e){
         e.preventDefault();
         var CodCuenta=$("[name=CodCuenta]:checked").val();
+        if(isNaN(CodCuenta)){alert("¡Seleccione una Cuenta!");return false;}
+        
         var Codigo=$("#formulariosubcuenta [name=Codigo]").val(); 
         var Nombre=$("#formulariosubcuenta [name=Nombre]").val(); 
         var Cod=$("#formulariosubcuenta [name=Cod]").val(); 
@@ -115,6 +121,12 @@ $(document).on("ready",function(){
         var CodGrupo=$("[name=CodGrupo]:checked").val();
         var CodCuenta=$("[name=CodCuenta]:checked").val();
         var CodSubcuenta=$("[name=CodSubcuenta]:checked").val();
+        
+        if(isNaN(CodCapitulo)){alert("¡Seleccione un Capitulo!");return false;}
+        if(isNaN(CodGrupo)){alert("¡Seleccione un Grupo!");return false;}
+        if(isNaN(CodCuenta)){alert("¡Seleccione una Cuenta!");return false;}
+        if(isNaN(CodSubcuenta)){alert("¡Seleccione una Subcuenta!");return false;}
+        
         var Codigo=$("#formulariocuentaanalitica [name=Codigo]").val(); 
         var Nombre=$("#formulariocuentaanalitica [name=Nombre]").val(); 
         var Cod=$("#formulariocuentaanalitica [name=Cod]").val(); 

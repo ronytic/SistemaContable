@@ -31,25 +31,29 @@ $(document).on("ready",function(){
     });
     $(document).on("click","#nuevogrupo",function(e){
         e.preventDefault();
-        $.post("grupo/formulario_grupo.php",{},function(data){
+        var CodCapitulo=$("[name=CodCapitulo]:checked").val();
+        $.post("grupo/formulario_grupo.php",{"CodCapitulo":CodCapitulo},function(data){
             $("#formulariogrupo").html(data).slideDown("slow");    
         });
     });
     $(document).on("click","#nuevocuenta",function(e){
         e.preventDefault();
-        $.post("cuenta/formulario_cuenta.php",{},function(data){
+        var CodGrupo=$("[name=CodGrupo]:checked").val();
+        $.post("cuenta/formulario_cuenta.php",{"CodGrupo":CodGrupo},function(data){
             $("#formulariocuenta").html(data).slideDown("slow");    
         });
     });
     $(document).on("click","#nuevosubcuenta",function(e){
         e.preventDefault();
-        $.post("subcuenta/formulario_subcuenta.php",{},function(data){
+        var CodCuenta=$("[name=CodCuenta]:checked").val();
+        $.post("subcuenta/formulario_subcuenta.php",{"CodCuenta":CodCuenta},function(data){
             $("#formulariosubcuenta").html(data).slideDown("slow");    
         });
     });
     $(document).on("click","#nuevocuentaanalitica",function(e){
         e.preventDefault();
-        $.post("cuentaanalitica/formulario_cuentaanalitica.php",{},function(data){
+        var CodSubcuenta=$("[name=CodSubcuenta]:checked").val();
+        $.post("cuentaanalitica/formulario_cuentaanalitica.php",{"CodSubcuenta":CodSubcuenta},function(data){
             $("#formulariocuentaanalitica").html(data).slideDown("slow");    
         });
     });

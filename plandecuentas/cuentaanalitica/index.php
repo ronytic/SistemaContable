@@ -69,7 +69,7 @@ $(document).on("ready",function(){
         var Cod=$("#formulariocapitulo [name=Cod]").val(); 
         var ArchivoGuardar=$("#formulariocapitulo [name=ArchivoGuardar]").val(); 
         $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod},function(){
-            listargrupos();    
+            listarcapitulos();    
              $("#formulariocapitulo").html('');
         })
     })

@@ -11,6 +11,13 @@ if($_GET['Cod']!=""){
 }else{
     $titulo="Nuevo";    
     $archivo="guardar.php";
+    
+    include_once("../../../class/plancuentas_capitulo.php");
+    $plancuentas_capitulo=new plancuentas_capitulo;
+    $plancuentas_capitulo->campos=array("MAX(Codigo) as Codigo");
+    $pc_cap=$plancuentas_capitulo->mostrarTodoRegistro("",1,"Codigo");
+    $pc_cap=array_shift($pc_cap);
+    $pc_cap['Codigo']+=1;
 }
 ?>
 <small>

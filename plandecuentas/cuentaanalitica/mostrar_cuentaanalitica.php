@@ -3,7 +3,7 @@ include("../../login/check.php");
 extract($_POST);
 include("../../class/plancuentas_cuentaanalitica.php");
 $plancuentas_cuentaanalitica=new plancuentas_cuentaanalitica;
-$pc_subcue=$plancuentas_cuentaanalitica->mostrarTodoRegistro("CodSubcuenta=$CodSubcuenta","1","Codigo,Nombre");
+$pc_subcue=$plancuentas_cuentaanalitica->mostrarTodoRegistro("CodSubcuenta=$CodSubcuenta","1","CAST(Codigo AS UNSIGNED),Nombre");
 
 include("../../class/plancuentas_capitulo.php");
 $plancuentas_capitulo=new plancuentas_capitulo;

@@ -4,14 +4,26 @@ extract($_POST);
 include("../../class/plancuentas_cuentaanalitica.php");
 $plancuentas_cuentaanalitica=new plancuentas_cuentaanalitica;
 $pc_subcue=$plancuentas_cuentaanalitica->mostrarTodoRegistro("CodSubcuenta=$CodSubcuenta","1","Codigo,Nombre");
+
+include("../../class/plancuentas_capitulo.php");
+$plancuentas_capitulo=new plancuentas_capitulo;
+include("../../class/plancuentas_grupo.php");
+$plancuentas_grupo=new plancuentas_grupo;
+include("../../class/plancuentas_cuenta.php");
+$plancuentas_cuenta=new plancuentas_cuenta;
+include("../../class/plancuentas_subcuenta.php");
+$plancuentas_subcuenta=new plancuentas_subcuenta;
 ?>
 <table class="table table-bordered table-striped table-hover table-condensed">
 <thead>
-<tr><th>Nombre</th></tr>
+<tr><th width="50">Cod. General</th><th>Nombre</th></tr>
 
 </thead>
-<?php foreach($pc_subcue as $c){?>
+<?php foreach($pc_subcue as $c){
+    $pc_cap=$plancuentas_capitulo->mostrarTodoRegistro("CodCapitulo=".$c['CodCapitulo']);    $pc_cap=array_shift($pc_cap);
+?>
 <tr>
+    <td class="der"><?php echo $pc_cap['Codigo']?>.000</td>
     <td>
         <div class="radio radio-danger">
         <input type="radio" name="CodCuentaAnalitica" value="<?php echo $c['CodCuentaAnalitica']?>" id="CodCuentaAnalitica<?php echo $c['CodCuentaAnalitica']?>">

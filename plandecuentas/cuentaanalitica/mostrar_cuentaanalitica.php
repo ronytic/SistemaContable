@@ -16,7 +16,7 @@ $plancuentas_subcuenta=new plancuentas_subcuenta;
 ?>
 <table class="table table-bordered table-striped table-hover table-condensed">
 <thead>
-<tr><th width="50">Código General</th><th>Nombre</th></tr>
+<tr><th width="50">Código General</th><th>Nombre</th><th>Detalle</th></tr>
 
 </thead>
 <?php foreach($pc_subcue as $c){
@@ -36,7 +36,7 @@ $plancuentas_subcuenta=new plancuentas_subcuenta;
         <label for="CodCuentaAnalitica<?php echo $c['CodCuentaAnalitica']?>"><?php echo $c['Codigo']?> - <?php echo $c['Nombre']?></label>
         </div>    
     </td>
-    
+    <td><?php echo $c['Detalle']?></td>
     <td width="40">
     <?php if($_SESSION['CodEmpresa']==$c['CodEmpresa'] || $_SESSION['Nivel']==1){?>
     <a href="cuentaanalitica/formulario_cuentaanalitica.php?Cod=<?php echo $c['CodCuentaAnalitica']?>" class="btn btn-xs btn-white modificarcuenta" title="Modificar" rel-formulario="formulariocuentaanalitica"><i class="fa fa-pencil"></i></a>

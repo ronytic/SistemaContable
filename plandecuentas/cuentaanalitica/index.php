@@ -47,6 +47,13 @@ $(document).on("ready",function(){
             $("#formulariosubcuenta").html(data).slideDown("slow");    
         });
     });
+    $(document).on("click","#nuevocuentaanalitica",function(e){
+        e.preventDefault();
+        $.post("cuentaanalitica/formulario_cuentaanalitica.php",{},function(data){
+            $("#formulariocuentaanalitica").html(data).slideDown("slow");    
+        });
+    });
+    
     $(document).on("click"," .cerrar",function(e){
         e.preventDefault();
         $(this).parent().parent().parent().html('');
@@ -96,6 +103,21 @@ $(document).on("ready",function(){
         $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodCuenta":CodCuenta},function(){
             listarsubcuentas();    
              $("#formulariosubcuenta").html('');
+        })
+    })
+    $(document).on("click","#GuardarCuentaAnalitica",function(e){
+        e.preventDefault();
+        var CodCapitulo=$("[name=CodCapitulo]:checked").val();
+        var CodGrupo=$("[name=CodGrupo]:checked").val();
+        var CodCuenta=$("[name=CodCuenta]:checked").val();
+        var CodSubcuenta=$("[name=CodSubcuenta]:checked").val();
+        var Codigo=$("#formulariocuentaanalitica [name=Codigo]").val(); 
+        var Nombre=$("#formulariocuentaanalitica [name=Nombre]").val(); 
+        var Cod=$("#formulariocuentaanalitica [name=Cod]").val(); 
+        var ArchivoGuardar=$("#formulariocuentaanalitica [name=ArchivoGuardar]").val(); 
+        $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodCapitulo":CodCapitulo,"CodGrupo":CodGrupo,"CodCuenta":CodCuenta,"CodSubcuenta":CodSubcuenta},function(){
+            listarcuentaanalitica();    
+             $("#formulariocuentaanalitica").html('');
         })
     })
     $(document).on("click",".modificarcuenta",function(e){

@@ -10,6 +10,14 @@ $pc_gru=$plancuentas_grupo->mostrarTodoRegistro("CodCapitulo=$CodCapitulo","1","
 <tr><th>Nombre</th></tr>
 
 </thead>
+<tr>
+    <td>
+        <div class="radio radio-danger">
+        <input type="radio" name="CodGrupo" value="0" id="Grupo0">
+        <label for="Grupo0">0 - Ninguno</label>
+        </div> 
+    </td>
+</tr>
 <?php foreach($pc_gru as $c){?>
 <tr>
     <td>

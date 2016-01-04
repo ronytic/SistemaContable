@@ -118,8 +118,9 @@ $(document).on("ready",function(){
         var Codigo=$("#formulariocuentaanalitica [name=Codigo]").val(); 
         var Nombre=$("#formulariocuentaanalitica [name=Nombre]").val(); 
         var Cod=$("#formulariocuentaanalitica [name=Cod]").val(); 
+        var Detalle=$("#formulariocuentaanalitica [name=Detalle]").val(); 
         var ArchivoGuardar=$("#formulariocuentaanalitica [name=ArchivoGuardar]").val(); 
-        $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Cod":Cod,"CodCapitulo":CodCapitulo,"CodGrupo":CodGrupo,"CodCuenta":CodCuenta,"CodSubcuenta":CodSubcuenta},function(){
+        $.post(ArchivoGuardar,{"Codigo":Codigo,"Nombre":Nombre,"Detalle":Detalle,"Cod":Cod,"CodCapitulo":CodCapitulo,"CodGrupo":CodGrupo,"CodCuenta":CodCuenta,"CodSubcuenta":CodSubcuenta},function(){
             listarcuentaanalitica();    
              $("#formulariocuentaanalitica").html('');
         })
